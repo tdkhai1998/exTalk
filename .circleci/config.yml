@@ -18,8 +18,7 @@ jobs:
 
       - run:
           name: Install Serverless CLI and dependencies
-          command: |
-            sudo npm i -g serverless
+          command:
             npm install
 
       - save_cache:
@@ -31,7 +30,3 @@ jobs:
       - run: 
           name: Run tests with coverage
           command: npm test --coverage
-
-      - run:
-          name: Deploy application
-          command: sls deploy --stage pre
