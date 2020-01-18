@@ -20,4 +20,4 @@ To fetch logs, once the lambda deployed, run:
 sls logs -f main
 ```
 
-khaitd
+khaitd2
