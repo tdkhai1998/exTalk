@@ -16,7 +16,7 @@ jobs:
             - v1-dependencies-{{ checksum "package.json" }}
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
-
+      - run: sudo npm i -g serverless
       - run: npm install
 
       - save_cache:
@@ -32,8 +32,8 @@ jobs:
     steps:
       - checkout
       - run:
-          command: |
-            serverless deploy
+          name: Deploy application
+          command: sls deploy --stage pre
 workflows:
   version: 2
   build-deploy:
